@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>С Днём Рождения, Ариана ❤️</title>
+
+  <!-- Пиксельный шрифт для интро -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ============================================= -->
+  <!-- КНОПКА МУЗЫКИ (плавает поверх всего сайта)      -->
+  <!-- ============================================= -->
+  <button id="music-toggle" class="music-toggle" aria-label="Включить музыку" title="Музыка">
+    <span class="music-icon">♪</span>
+  </button>
+  <audio id="bg-music" src="assets/music.mp3" loop preload="none"></audio>
+
+  <!-- ============================================= -->
+  <!-- ЭКРАН 1 — ИНТРО                                 -->
+  <!-- ============================================= -->
+  <section id="screen-intro" class="screen active">
+    <canvas id="rain-canvas"></canvas>
+
+    <div class="intro-content">
+      <!-- Отсчёт -->
+      <div id="countdown" class="pixel-countdown"></div>
+
+      <!-- Слова HAPPY / BIRTHDAY / TO / ARIANA -->
+      <div id="intro-words" class="intro-words"></div>
+
+      <!-- Пиксельное сердце -->
+      <div id="pixel-heart" class="pixel-heart" aria-hidden="true">
+        <div class="pixel-heart-shape"></div>
+      </div>
+    </div>
+
+    <button id="skip-intro" class="skip-btn">Пропустить ⏭</button>
+  </section>
+
+  <!-- ============================================= -->
+  <!-- ЭКРАН 2 — ПОЗДРАВЛЕНИЕ                          -->
+  <!-- ============================================= -->
+  <section id="screen-message" class="screen">
+    <div class="falling-hearts" id="falling-hearts-message" aria-hidden="true"></div>
+
+    <div class="message-content">
+      <p class="typed-line" data-text="Сегодня особенный день."></p>
+      <p class="typed-line" data-text="День, когда мир стал лучше,"></p>
+      <p class="typed-line" data-text="потому что в нем появилась ты."></p>
+      <p class="typed-line spacer" data-text="Спасибо тебе за каждую улыбку,"></p>
+      <p class="typed-line" data-text="за поддержку,"></p>
+      <p class="typed-line" data-text="за моменты, которые хочется проживать снова и снова."></p>
+      <p class="typed-line highlight spacer" data-text="С днем рождения, моя любовь ❤️"></p>
+    </div>
+
+    <button id="continue-btn" class="glow-btn hidden">Продолжить ❤️</button>
+  </section>
+
+  <!-- ============================================= -->
+  <!-- ЭКРАН 3 — ГАЛЕРЕЯ                               -->
+  <!-- ============================================= -->
+  <section id="screen-gallery" class="screen">
+    <h2 class="gallery-title">Наши воспоминания ❤️</h2>
+    <div id="gallery-grid" class="gallery-grid"></div>
+    <button id="to-final-btn" class="glow-btn">Дальше ❤️</button>
+
+    <!-- Лайтбокс для полноэкранного просмотра фото -->
+    <div id="lightbox" class="lightbox">
+      <button id="lightbox-close" class="lightbox-close" aria-label="Закрыть">✕</button>
+      <img id="lightbox-img" src="" alt="Воспоминание" />
+    </div>
+  </section>
+
+  <!-- ============================================= -->
+  <!-- ЭКРАН 4 — ФИНАЛ                                 -->
+  <!-- ============================================= -->
+  <section id="screen-final" class="screen">
+    <div class="falling-hearts" id="falling-hearts-final" aria-hidden="true"></div>
+
+    <div id="final-heart" class="final-heart" tabindex="0" role="button" aria-label="Нажми на сердце">
+      <div class="final-heart-shape"></div>
+    </div>
+    <p id="final-hint" class="final-hint">Нажми на сердце ❤️</p>
+
+    <div id="fireworks-layer" class="fireworks-layer" aria-hidden="true"></div>
+
+    <!-- Полупрозрачное окно благодарности -->
+    <div id="thanks-modal" class="thanks-modal">
+      <div class="thanks-box">
+        <p>Спасибо, что посмотрела до конца ❤️</p>
+        <p>Надеюсь, этот маленький подарок смог подарить тебе улыбку.</p>
+        <button id="restart-btn" class="glow-btn">↻ Посмотреть еще раз</button>
+      </div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
